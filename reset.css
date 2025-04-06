@@ -1,0 +1,54 @@
+html,
+body,
+div,
+iframe,
+h1,
+h2,
+h3,
+p,
+address,
+img,
+ul,
+li,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+button {
+  all: unset; /* Réinitialise toutes les propriétés par défaut */
+  display: inline-block;
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}

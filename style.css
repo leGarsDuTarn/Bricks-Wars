@@ -1,0 +1,249 @@
+@font-face {
+  font-family: Audiowide;
+  src: url(Fonts/Audiowide-Regular.ttf) format("truetype");
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Audiowide;
+  width: 100%;
+  align-content: center;
+  padding: 10px;
+  margin-top: -50px;
+  font-size: 5rem;
+}
+#game-over-message {
+  display: none; /* Masque l'élément au départ */
+  font-family: Audiowide;
+  font-size: 3rem;
+  text-align: center;
+  background: -webkit-linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  background: linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
+  -webkit-text-fill-color: transparent; /* Rends le fond du texte transparent */
+  position: fixed; /* Fixé sur l'écran */
+  top: 60%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour le centrer parfaitement */
+  z-index: 1000; /* Assure qu'il soit au-dessus de tout */
+}
+
+#pause-message {
+  display: none; /* Masque l'élément au départ */
+  font-family: Audiowide;
+  font-size: 3rem;
+  text-align: center;
+  background: -webkit-linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  background: linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
+  -webkit-text-fill-color: transparent; /* Rends le fond du texte transparent */
+  position: fixed; /* Fixé sur l'écran */
+  top: 60%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour le centrer parfaitement */
+  z-index: 1000; /* Assure qu'il soit au-dessus de tout */
+}
+
+#win-message {
+  display: none; /* Masque l'élément au départ */
+  font-family: Audiowide;
+  font-size: 3rem;
+  text-align: center;
+  background: -webkit-linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  background: linear-gradient(
+    290deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(103deg 77% 21%) 31%,
+    hsl(103deg 77% 29%) 43%,
+    hsl(103deg 77% 29%) 52%,
+    hsl(103deg 77% 21%) 67%,
+    hsl(0deg 0% 0%) 100%
+  );
+  -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
+  -webkit-text-fill-color: transparent; /* Rends le fond du texte transparent */
+  position: fixed; /* Fixé sur l'écran */
+  top: 60%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour le centrer parfaitement */
+  z-index: 1000; /* Assure qu'il soit au-dessus de tout */
+}
+
+#game-setup-canvas {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  outline: solid black 2px;
+}
+.container-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 5px;
+  padding: 20px 0px;
+}
+button {
+  margin-right: 30px;
+  padding: 10px;
+  font-family: Audiowide;
+  font-size: 1.2rem;
+}
+.btn {
+  font-size: 0.8rem;
+}
+
+/* Mode portrait pour les écrans Mobile */
+@media (orientation: portrait) and (max-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  #game-setup-canvas {
+    max-width: 95%;
+    height: auto;
+  }
+  .container-btn {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  button {
+    margin-right: 10px;
+    padding: 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Mode paysage pour les écran Mobile */
+@media (orientation: landscape) and (max-width: 900px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-bottom: -20px;
+  }
+
+  #game-setup-canvas {
+    width: 50%;
+    height: 250px;
+  }
+
+  .container-btn {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  button {
+    width: auto;
+    padding: 5px;
+  }
+}
+
+/* Pour des écrans d'Ipad */
+@media (orientation: landscape) and (min-width: 1080px) and (max-width: 1200px) {
+  body {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  #game-setup-canvas {
+    width: 90%;
+    height: 500px;
+  }
+
+  .container-btn {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  button {
+    width: 200px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
+/* Pour les écran de PC */
+@media (min-width: 1200px) and (min-height: 760px) {
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 50px;
+  }
+  #game-setup-canvas {
+    width: 500px;
+    height: 500px;
+  }
+  .container-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 20px 0px;
+  }
+  button {
+    margin-right: 30px;
+    padding: 10px;
+    font-family: Audiowide;
+  }
+}

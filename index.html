@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casse-brique</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Bricks Wars</h1>
+    <div id="win-message">
+      You WON !!! <br />
+      Restart ?
+    </div>
+    <div id="game-over-message">Game Over !</div>
+    <div id="pause-message">Pause</div>
+    <canvas id="game-setup-canvas" width="500" height="500"></canvas>
+    <div class="container-btn">
+      <button id="new-game-btn">
+        NEW GAME <span class="btn"><br />(press Enter)</span>
+      </button>
+      <button id="play-game-btn">
+        PLAY <span class="btn"><br />(press Space)</span>
+      </button>
+      <button id="pause-game-btn">
+        PAUSE <span class="btn"><br />(press P)</span>
+      </button>
+      <button id="restart-game-btn">
+        RESTART <span class="btn"><br />(press Enter)</span>
+      </button>
+    </div>
+    <script src="game-play.js"></script>
+    <script src="bricks.js"></script>
+  </body>
+</html>
