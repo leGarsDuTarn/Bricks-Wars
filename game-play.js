@@ -173,6 +173,7 @@ newGameBtn.addEventListener("click", function () {
   // Réinitialisation du message Game Over lors d'une nouvelle Partie
   gameOverMessage.style.display = "none"; // Cacher le message.
   // Relance du jeu
+  startGame();
   animate();
 });
 
@@ -198,17 +199,19 @@ function youWin() {
     gamePause = true;
     gameWin = true;
     animate();
+    stopTimer();
+    registerBestTime();
   }
 }
 
-/* Cheat code pour supprimer les bricks imediatement */
+/* Cheat code pour supprimer les bricks imediatement 
 document.addEventListener("keydown", (event) => {
   if (event.key === "w") {
     // Appuie sur "W" pour gagner directement
     bricks.forEach((row) => row.forEach((brick) => (brick.status = 0)));
     youWin();
   }
-});
+});*/
 
 /* Gestion du Game Over */
 let gameOverMessage = document.getElementById("game-over-message");
@@ -217,6 +220,8 @@ function gameOverBenji() {
     // La balle vient de toucher le bas du canvas.
     gameOver = true;
     gamePause = true;
+
+    stopTimer();
 
     // Affichage des briques.
     bricksRevealed = true;
@@ -266,7 +271,6 @@ function keyDownHandler(event) {
       playBtn.style.display = "none";
       pauseBtn.style.display = "inline";
       pauseMessage.style.display = "none";
-
       animate();
     }
     // Relance du jeu quand c'est une nouvelle partie avec la touche Space.
@@ -278,6 +282,7 @@ function keyDownHandler(event) {
       playBtn.style.display = "none";
       pauseBtn.style.display = "inline";
       animate();
+      startGame(); // Demare le chrono
     }
   }
   // Met le jeu en pause qu'on appuie sur la touche P.
@@ -299,6 +304,7 @@ function keyDownHandler(event) {
     newGameBtn.style.display = "none"; // Caché
     gameOverMessage.style.display = "none"; // Cache le message Game Over.
     winMessage.style.display = "none";
+    startGame(); // Demare le chrono
   }
   if (event.code === "Enter" && gameWin) {
     gameWin = false;
@@ -310,6 +316,7 @@ function keyDownHandler(event) {
     gameOverMessage.style.display = "none"; // Cache le message Game Over.
     winMessage.style.display = "none"; // Cache
     restartBtn.style.display = "none"; // cache
+    startGame();
     resetBricks();
   }
 }
