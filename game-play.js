@@ -172,6 +172,7 @@ newGameBtn.addEventListener("click", function () {
 
   // Réinitialisation du message Game Over lors d'une nouvelle Partie
   gameOverMessage.style.display = "none"; // Cacher le message.
+  recordMessage.style.display = "none"; // Cache le message si nouveau record
   // Relance du jeu
   startGame();
   animate();
@@ -204,14 +205,14 @@ function youWin() {
   }
 }
 
-/* Cheat code pour supprimer les bricks imediatement 
-document.addEventListener("keydown", (event) => {
+//Cheat code pour supprimer les bricks imediatement
+/* document.addEventListener("keydown", (event) => {
   if (event.key === "w") {
     // Appuie sur "W" pour gagner directement
     bricks.forEach((row) => row.forEach((brick) => (brick.status = 0)));
     youWin();
   }
-});*/
+})*/
 
 /* Gestion du Game Over */
 let gameOverMessage = document.getElementById("game-over-message");
@@ -281,6 +282,7 @@ function keyDownHandler(event) {
       bricksRevealed = true;
       playBtn.style.display = "none";
       pauseBtn.style.display = "inline";
+      recordMessage.style.display = "none";
       animate();
       startGame(); // Demare le chrono
     }
@@ -304,6 +306,7 @@ function keyDownHandler(event) {
     newGameBtn.style.display = "none"; // Caché
     gameOverMessage.style.display = "none"; // Cache le message Game Over.
     winMessage.style.display = "none";
+    recordMessage.style.display = "none"; // cache le message new record
     startGame(); // Demare le chrono
   }
   if (event.code === "Enter" && gameWin) {
@@ -316,6 +319,7 @@ function keyDownHandler(event) {
     gameOverMessage.style.display = "none"; // Cache le message Game Over.
     winMessage.style.display = "none"; // Cache
     restartBtn.style.display = "none"; // cache
+    recordMessage.style.display = "none"; // cache le message new record
     startGame();
     resetBricks();
   }
