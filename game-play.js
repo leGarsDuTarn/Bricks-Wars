@@ -273,6 +273,7 @@ function keyDownHandler(event) {
       pauseBtn.style.display = "inline";
       pauseMessage.style.display = "none";
       animate();
+      startGame(); // permet de lancer le chrono lors d'une nouvelle partie
     }
     // Relance du jeu quand c'est une nouvelle partie avec la touche Space.
     if (!gameStart) {
@@ -284,7 +285,7 @@ function keyDownHandler(event) {
       pauseBtn.style.display = "inline";
       recordMessage.style.display = "none";
       animate();
-      startGame(); // Demare le chrono
+      startGame();
     }
   }
   // Met le jeu en pause qu'on appuie sur la touche P.
@@ -307,7 +308,8 @@ function keyDownHandler(event) {
     gameOverMessage.style.display = "none"; // Cache le message Game Over.
     winMessage.style.display = "none";
     recordMessage.style.display = "none"; // cache le message new record
-    startGame(); // Demare le chrono
+    startGame();
+  
   }
   if (event.code === "Enter" && gameWin) {
     gameWin = false;

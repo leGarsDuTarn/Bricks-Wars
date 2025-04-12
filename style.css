@@ -89,7 +89,7 @@ h1 {
 #win-message {
   display: none; /* Masque l'élément au départ */
   font-family: Audiowide;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
   background: -webkit-linear-gradient(
     290deg,
@@ -118,11 +118,59 @@ h1 {
   z-index: 1000; /* Assure qu'il soit au-dessus de tout */
 }
 
+#best-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Audiowide;
+  width: 100%;
+  align-content: center;
+  padding: 10px;
+  margin-top: -20px;
+  font-size: 1.5rem;
+  font-family: Audiowide;
+}
+
+#chrono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: center;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 5rem;
+  font-family: Audiowide;
+  font-size: 1rem;
+}
+
+#new-record-message {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  align-content: center;
+  padding: 5px;
+  margin-top: 5px;
+  font-family: Audiowide;
+  font-size: 2rem;
+  color: gold;
+  position: fixed; /* Fixé sur l'écran */
+  top: 45%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour le centrer parfaitement */
+  z-index: 1000; /* Assure qu'il soit au-dessus de tout */
+}
+
 #game-setup-canvas {
   width: 500px;
   height: 500px;
   border-radius: 20px;
   outline: solid black 2px;
+  margin-top: 5px;
 }
 .container-btn {
   display: flex;
